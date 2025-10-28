@@ -1,0 +1,310 @@
+═══════════════════════════════════════════════════════════════════
+   📝 SAMPLE POST - COPY & PASTE INTO ADMIN PANEL
+═══════════════════════════════════════════════════════════════════
+
+Here are some sample posts you can add to test the system!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SAMPLE 1: NEWS POST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Category: News
+
+Title:
+Kolkata Traffic Update - EM Bypass Construction Work Today
+
+Slug:
+kolkata-traffic-update-em-bypass-construction
+
+Featured Image URL:
+https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800
+
+Excerpt:
+Major construction work on EM Bypass near Science City causing traffic delays. Commuters advised to take alternate routes. Expected to continue till 8 PM today.
+
+Full Content:
+<p>The Kolkata Traffic Police have issued an advisory regarding major construction work on EM Bypass near Science City today. The work, which started at 6 AM, is expected to continue till 8 PM.</p>
+
+<h4>Affected Areas:</h4>
+<ul>
+<li>EM Bypass near Science City</li>
+<li>Beside Nicco Park</li>
+<li>Central Park intersection</li>
+</ul>
+
+<h4>Alternate Routes Suggested:</h4>
+<p>Commuters are advised to take the following alternate routes:</p>
+<ul>
+<li><strong>From North:</strong> Use Park Circus connector</li>
+<li><strong>From South:</strong> Use Kasba-Gariahat route</li>
+<li><strong>From East:</strong> Use VIP Road bypass</li>
+</ul>
+
+<h4>Traffic Police Deployment:</h4>
+<p>Additional traffic police personnel have been deployed at key junctions to manage the flow. Commuters are requested to cooperate and follow the instructions of traffic police.</p>
+
+<p><strong>For real-time updates:</strong> Follow Kolkata Traffic Police Twitter @KPTrafficDept</p>
+
+<p style="background: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #ffc107; margin-top: 20px;">
+<strong>⚠️ Important Note:</strong> Plan your journey accordingly and allow extra 30-45 minutes for your commute during this period.
+</p>
+
+Meta Description:
+EM Bypass construction near Science City causing traffic delays today. Check alternate routes and real-time updates. Kolkata Traffic advisory.
+
+Keywords:
+kolkata traffic, em bypass, traffic update, kolkata news, science city, traffic advisory
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SAMPLE 2: MALL POST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Category: Mall
+
+Title:
+South City Mall - Complete Guide: Timings, Parking & Facilities
+
+Slug:
+south-city-mall-kolkata-complete-guide
+
+Featured Image URL:
+https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=800
+
+Excerpt:
+Everything you need to know about South City Mall Kolkata - opening hours, parking info, best stores, food court, cinema, and special facilities. Your complete shopping guide.
+
+Full Content:
+<p>South City Mall is one of Kolkata's premier shopping destinations located on Prince Anwar Shah Road. This comprehensive guide covers everything you need to know before visiting.</p>
+
+<h4>🕐 Opening Hours</h4>
+<p><strong>Regular Days:</strong> 11:00 AM - 10:00 PM<br>
+<strong>Weekends & Holidays:</strong> 11:00 AM - 11:00 PM<br>
+<strong>Sundays:</strong> 11:00 AM - 10:00 PM</p>
+
+<h4>🅿️ Parking Information</h4>
+<p>Multi-level parking facility available with capacity for 1000+ vehicles</p>
+<ul>
+<li><strong>Cars:</strong> ₹40 for first 2 hours, ₹20 per additional hour</li>
+<li><strong>Two-wheelers:</strong> ₹20 for first 2 hours, ₹10 per additional hour</li>
+<li><strong>Valet parking:</strong> Available at main entrance</li>
+</ul>
+
+<h4>🛍️ Shopping Categories</h4>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 15px 0;">
+<div style="background: #f0f0f0; padding: 10px; border-radius: 5px;">
+<strong>👗 Fashion & Apparel</strong><br>
+Zara, H&M, Marks & Spencer, Lifestyle
+</div>
+<div style="background: #f0f0f0; padding: 10px; border-radius: 5px;">
+<strong>📱 Electronics</strong><br>
+Croma, Reliance Digital, Apple Store
+</div>
+<div style="background: #f0f0f0; padding: 10px; border-radius: 5px;">
+<strong>🍽️ Food & Dining</strong><br>
+Food Court (Level 3), Multiple Restaurants
+</div>
+<div style="background: #f0f0f0; padding: 10px; border-radius: 5px;">
+<strong>🎬 Entertainment</strong><br>
+INOX Cinema (8 screens), Gaming Zone
+</div>
+</div>
+
+<h4>🍕 Popular Food Outlets</h4>
+<ul>
+<li>Mainland China - Chinese cuisine</li>
+<li>Barbeque Nation - Multi-cuisine buffet</li>
+<li>KFC, McDonald's, Domino's - Fast food</li>
+<li>Café Coffee Day, Starbucks - Coffee</li>
+</ul>
+
+<h4>🎯 Special Facilities</h4>
+<ul>
+<li>✅ ATMs - Multiple banks</li>
+<li>✅ Free WiFi throughout the mall</li>
+<li>✅ Wheelchair accessibility</li>
+<li>✅ Mother & child rooms</li>
+<li>✅ Prayer room</li>
+<li>✅ Lost & Found counter</li>
+</ul>
+
+<h4>📍 Location & How to Reach</h4>
+<p><strong>Address:</strong> 375, Prince Anwar Shah Road, South City Complex, Jadavpur, Kolkata - 700068</p>
+
+<p><strong>By Metro:</strong> Rabindra Sarobar Metro Station (1.5 km)<br>
+<strong>By Bus:</strong> Multiple routes - S11, 37, 39, 45, etc.<br>
+<strong>By Cab:</strong> Uber/Ola available</p>
+
+<h4>💡 Pro Tips</h4>
+<ul>
+<li>🎫 Buy movie tickets online to avoid queues</li>
+<li>🛍️ Visit on weekdays for less crowds</li>
+<li>💳 Most stores accept cards and UPI</li>
+<li>🎁 Check for seasonal sales and offers</li>
+</ul>
+
+<p style="background: #e8f5e9; padding: 15px; border-radius: 5px; border-left: 4px solid #4caf50; margin-top: 20px;">
+<strong>🌟 Visitor Rating:</strong> 4.5/5 stars<br>
+<strong>Best For:</strong> Shopping, dining, entertainment, weekend outings
+</p>
+
+<h4>📞 Contact Information</h4>
+<p><strong>Phone:</strong> +91-33-2499-8747<br>
+<strong>Customer Care:</strong> Available 10 AM - 9 PM<br>
+<strong>Website:</strong> southcitykolkata.in</p>
+
+Meta Description:
+Complete guide to South City Mall Kolkata - timings, parking, best stores, food court, cinema. Everything you need for the perfect shopping experience.
+
+Keywords:
+south city mall, kolkata malls, shopping kolkata, mall timings, south city parking, jadavpur mall
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SAMPLE 3: SHORT NEWS POST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Category: News
+
+Title:
+Kolkata Weather Update - Mild Winter Expected This Week
+
+Slug:
+kolkata-weather-update-mild-winter
+
+Excerpt:
+Kolkata to experience mild winter conditions this week with temperatures ranging between 15-26°C. Clear skies expected with pleasant weather for outdoor activities.
+
+Full Content:
+<p>The Regional Meteorological Department has forecast mild winter conditions in Kolkata this week. The city will experience pleasant weather with clear skies.</p>
+
+<h4>Weekly Forecast:</h4>
+<ul>
+<li><strong>Monday - Wednesday:</strong> 15-24°C, Clear skies</li>
+<li><strong>Thursday - Friday:</strong> 16-26°C, Partly cloudy</li>
+<li><strong>Weekend:</strong> 17-25°C, Pleasant weather</li>
+</ul>
+
+<p><strong>What to Expect:</strong></p>
+<ul>
+<li>Cool mornings and evenings</li>
+<li>Warm afternoons</li>
+<li>No chance of rain</li>
+<li>Moderate humidity levels</li>
+</ul>
+
+<p>Perfect weather for outdoor activities, picnics, and evening walks in parks!</p>
+
+Meta Description:
+Kolkata weather update: Mild winter this week with temperatures 15-26°C. Clear skies and pleasant conditions expected.
+
+Keywords:
+kolkata weather, winter kolkata, weather update, temperature, forecast
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SAMPLE 4: MALL POST (MULTIPLE MALLS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Category: Mall
+
+Title:
+Top 5 Shopping Malls in Kolkata - Comparison & Reviews 2025
+
+Slug:
+top-5-shopping-malls-kolkata-comparison
+
+Excerpt:
+Detailed comparison of Kolkata's top 5 shopping malls - South City, Quest, Acropolis, City Centre and Mani Square. Find the best mall for your needs with our comprehensive review.
+
+Full Content:
+<p>Planning a shopping trip in Kolkata? Here's our detailed comparison of the city's top 5 shopping malls to help you choose the perfect destination.</p>
+
+<h4>1. 🏆 South City Mall</h4>
+<p><strong>Location:</strong> Prince Anwar Shah Road, Jadavpur</p>
+<ul>
+<li>⭐ Rating: 4.5/5</li>
+<li>🛍️ Stores: 180+</li>
+<li>🎬 Cinema: INOX (8 screens)</li>
+<li>🅿️ Parking: Excellent</li>
+<li><strong>Best For:</strong> Premium shopping, entertainment</li>
+</ul>
+
+<h4>2. 🏪 Quest Mall</h4>
+<p><strong>Location:</strong> Park Circus, Ballygunge</p>
+<ul>
+<li>⭐ Rating: 4.6/5</li>
+<li>🛍️ Stores: 100+ premium brands</li>
+<li>🍽️ Dining: 25+ restaurants</li>
+<li>🅿️ Parking: Good</li>
+<li><strong>Best For:</strong> Luxury shopping, fine dining</li>
+</ul>
+
+<h4>3. 🏬 Acropolis Mall</h4>
+<p><strong>Location:</strong> Kasba, EM Bypass</p>
+<ul>
+<li>⭐ Rating: 4.3/5</li>
+<li>🛍️ Stores: 150+</li>
+<li>🎮 Entertainment: Gaming zone, bowling</li>
+<li>🅿️ Parking: Very good</li>
+<li><strong>Best For:</strong> Family entertainment</li>
+</ul>
+
+<h4>4. 🏢 City Centre Salt Lake</h4>
+<p><strong>Location:</strong> Salt Lake, Sector 1</p>
+<ul>
+<li>⭐ Rating: 4.2/5</li>
+<li>🛍️ Stores: 120+</li>
+<li>🎬 Cinema: PVR</li>
+<li>🅿️ Parking: Good</li>
+<li><strong>Best For:</strong> Local shopping, accessibility</li>
+</ul>
+
+<h4>5. 🏛️ Mani Square</h4>
+<p><strong>Location:</strong> EM Bypass, Gariahat</p>
+<ul>
+<li>⭐ Rating: 4.1/5</li>
+<li>🛍️ Stores: 100+</li>
+<li>🍕 Food Court: Large variety</li>
+<li>🅿️ Parking: Good</li>
+<li><strong>Best For:</strong> Budget shopping, food</li>
+</ul>
+
+<h4>📊 Quick Comparison</h4>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+<tr style="background: #1a1a1a; color: #ffd700;">
+<th style="padding: 10px; border: 1px solid #ffd700;">Mall</th>
+<th style="padding: 10px; border: 1px solid #ffd700;">Size</th>
+<th style="padding: 10px; border: 1px solid #ffd700;">Price Range</th>
+<th style="padding: 10px; border: 1px solid #ffd700;">Crowd</th>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd;">South City</td>
+<td style="padding: 8px; border: 1px solid #ddd;">Large</td>
+<td style="padding: 8px; border: 1px solid #ddd;">Mid-High</td>
+<td style="padding: 8px; border: 1px solid #ddd;">High</td>
+</tr>
+<tr>
+<td style="padding: 8px; border: 1px solid #ddd;">Quest</td>
+<td style="padding: 8px; border: 1px solid #ddd;">Medium</td>
+<td style="padding: 8px; border: 1px solid #ddd;">High</td>
+<td style="padding: 8px; border: 1px solid #ddd;">Medium</td>
+</tr>
+</table>
+
+<p style="background: #fff3cd; padding: 15px; border-radius: 5px; margin-top: 20px;">
+<strong>💡 Pro Tip:</strong> Visit on weekdays between 2-5 PM for the least crowds!
+</p>
+
+Meta Description:
+Compare top 5 shopping malls in Kolkata - South City, Quest, Acropolis, City Centre, Mani Square. Ratings, features, and best choices for 2025.
+
+Keywords:
+kolkata malls, shopping malls kolkata, south city mall, quest mall, best malls kolkata, mall comparison
+
+
+═══════════════════════════════════════════════════════════════════
+   ✅ COPY ANY SAMPLE ABOVE AND PASTE INTO ADMIN PANEL
+   Then click "Add Post" and download the HTML file!
+═══════════════════════════════════════════════════════════════════
+

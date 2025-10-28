@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test Results System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #ffd700;
+            padding: 20px;
+        }
+        .test-box {
+            background: #1a1a1a;
+            border: 2px solid #ffd700;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        button {
+            background: #ffd700;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #fff;
+        }
+        .result {
+            background: #0a0a0a;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ffd700;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        .success { color: #0f0; }
+        .error { color: #f00; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Kolkata FF Results System Test</h1>
+    
+    <div class="test-box">
+        <h2>Test 1: Check if txt file exists</h2>
+        <button onclick="testFetchFile()">Test Fetch 2025-10-28.txt</button>
+        <div id="fetchResult" class="result"></div>
+    </div>
+    
+    <div class="test-box">
+        <h2>Test 2: Parse txt content</h2>
+        <button onclick="testParsing()">Test Parse Function</button>
+        <div id="parseResult" class="result"></div>
+    </div>
+    
+    <div class="test-box">
+        <h2>Test 3: Check localStorage</h2>
+        <button onclick="testStorage()">Test Storage</button>
+        <div id="storageResult" class="result"></div>
+    </div>
+    
+    <div class="test-box">
+        <h2>Test 4: Manual Add Results</h2>
+        <button onclick="addTestResults()">Add Test Data to localStorage</button>
+        <button onclick="clearStorage()">Clear Storage</button>
+        <div id="manualResult" class="result"></div>
+    </div>
+    
+    <div class="test-box">
+        <h2>Test 5: Check Date</h2>
+        <button onclick="testDate()">Test Date Detection</button>
+        <div id="dateResult" class="result"></div>
+    </div>
+
+    <script>
+        // Test 1: Fetch file
+        async function testFetchFile() {
+            const result = document.getElementById('fetchResult');
+            result.innerHTML = 'Testing...';
+            
+            try {
+                const response = await fetch('2025-10-28.txt');
+                
+                if (response.ok) {
+                    const content = await response.text();
+                    result.innerHTML = '<span class="success">✅ SUCCESS!</span>\n\nFile found and readable:\n' + content;
+                } else {
+                    result.innerHTML = '<span class="error">❌ FAILED!</span>\n\nStatus: ' + response.status + '\nFile not found or not accessible';
+                }
+            } catch (error) {
+                result.innerHTML = '<span class="error">❌ ERROR!</span>\n\n' + error.message + '\n\nLikely CORS issue - file:// protocol blocks fetch()';
+            }
+        }
+        
+        // Test 2: Parsing
+        function testParsing() {
+            const result = document.getElementById('parseResult');
+            const testContent = `1. 239, 4
+2. 378, 8
+3. 358, 6
+4. 990, 8
+5. 112, 4
+6. 123, 6
+7. 366, 5
+8. 388, 9`;
+            
+            const parsed = parseTxtFile(testContent);
+            result.innerHTML = '<span class="success">✅ Parse Function Working!</span>\n\nParsed data:\n' + JSON.stringify(parsed, null, 2);
+        }
+        
+        function parseTxtFile(content) {
+            const lines = content.trim().split('\n');
+            const rounds = [];
+            
+            lines.forEach(line => {
+                line = line.trim();
+                if (!line) return;
+                
+                const match = line.match(/^\d+\.\s*(\d{3})(?:,\s*(\d))?/);
+                if (match) {
+                    const digits = match[1];
+                    const sum = match[2] || calculateSum(digits);
+                    rounds.push({ digits, sum });
+                }
+            });
+            
+            while (rounds.length < 8) {
+                rounds.push({ digits: '', sum: '' });
+            }
+            
+            return { rounds: rounds, created: new Date().toISOString() };
+        }
+        
+        function calculateSum(digits) {
+            if (!digits || digits.length !== 3) return '';
+            const sum = digits.split('').reduce((a, b) => parseInt(a) + parseInt(b), 0);
+            return String(sum % 10);
+        }
+        
+        // Test 3: Storage
+        function testStorage() {
+            const result = document.getElementById('storageResult');
+            const data = localStorage.getItem('kolkataFFResults');
+            
+            if (data) {
+                result.innerHTML = '<span class="success">✅ localStorage has data!</span>\n\n' + data;
+            } else {
+                result.innerHTML = '<span class="error">❌ No data in localStorage</span>';
+            }
+        }
+        
+        // Test 4: Manual add
+        function addTestResults() {
+            const result = document.getElementById('manualResult');
+            
+            const testData = {
+                '2025-10-28': {
+                    rounds: [
+                        { digits: '239', sum: '4' },
+                        { digits: '378', sum: '8' },
+                        { digits: '358', sum: '6' },
+                        { digits: '990', sum: '8' },
+                        { digits: '112', sum: '4' },
+                        { digits: '123', sum: '6' },
+                        { digits: '366', sum: '5' },
+                        { digits: '388', sum: '9' }
+                    ],
+                    created: new Date().toISOString()
+                }
+            };
+            
+            localStorage.setItem('kolkataFFResults', JSON.stringify(testData));
+            result.innerHTML = '<span class="success">✅ Test data added to localStorage!</span>\n\nNow refresh index.html to see results.';
+        }
+        
+        function clearStorage() {
+            localStorage.clear();
+            document.getElementById('manualResult').innerHTML = '<span class="error">🗑️ Storage cleared!</span>';
+        }
+        
+        // Test 5: Date
+        function testDate() {
+            const result = document.getElementById('dateResult');
+            const now = new Date();
+            const istOffset = 5.5 * 60 * 60 * 1000;
+            const istTime = new Date(now.getTime() + istOffset);
+            
+            const year = istTime.getFullYear();
+            const month = String(istTime.getMonth() + 1).padStart(2, '0');
+            const day = String(istTime.getDate()).padStart(2, '0');
+            const dateKey = `${year}-${month}-${day}`;
+            const filename = `${dateKey}.txt`;
+            
+            result.innerHTML = `<span class="success">✅ Date Detection Working!</span>
+
+Current System Time: ${now.toLocaleString()}
+IST Time: ${istTime.toLocaleString()}
+Date Key: ${dateKey}
+Looking for file: ${filename}`;
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Add करने का Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .code-box {
+            background: #0a0a0a;
+            border: 2px solid #ffd700;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .code-box h3 {
+            color: #ffd700;
+            margin-top: 0;
+        }
+        .code-box pre {
+            background: #000;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #0f0;
+            font-size: 14px;
+        }
+        .example-image {
+            max-width: 100%;
+            border: 2px solid #ffd700;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .step-box {
+            background: #1a1a1a;
+            border-left: 4px solid #ffd700;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .step-box h4 {
+            color: #ffd700;
+            margin-top: 0;
+        }
+        .btn-upload {
+            background: #1a1a1a;
+            color: #ffd700;
+            border: 2px solid #ffd700;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            display: inline-block;
+            text-decoration: none;
+            margin: 10px;
+        }
+        .btn-upload:hover {
+            background: #ffd700;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🖼️ Image Add करने का Complete Guide</h1>
+            <p class="tagline">Step by Step with Examples</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- STEP 1: Upload Image -->
+        <div class="code-box">
+            <h3>📤 STEP 1: Image को Online Upload करें</h3>
+            
+            <div class="step-box">
+                <h4>Option 1: ImgBB (Recommended)</h4>
+                <ol style="color: #ffd700;">
+                    <li>Go to: <a href="https://imgbb.com" target="_blank" style="color: #ffd700;">https://imgbb.com</a></li>
+                    <li>Click "Start uploading"</li>
+                    <li>Select your image</li>
+                    <li>Wait for upload</li>
+                    <li>Copy "Direct link" (NOT HTML code)</li>
+                </ol>
+                <a href="https://imgbb.com" target="_blank" class="btn-upload">📤 Open ImgBB</a>
+            </div>
+
+            <div class="step-box">
+                <h4>Option 2: Imgur</h4>
+                <ol style="color: #ffd700;">
+                    <li>Go to: <a href="https://imgur.com/upload" target="_blank" style="color: #ffd700;">https://imgur.com/upload</a></li>
+                    <li>Drag & drop image</li>
+                    <li>Right-click image → "Copy image address"</li>
+                </ol>
+                <a href="https://imgur.com/upload" target="_blank" class="btn-upload">📤 Open Imgur</a>
+            </div>
+
+            <p style="color: #0f0; font-weight: bold; margin-top: 20px;">
+                ✅ Example URL आप को मिलेगा:<br>
+                https://i.ibb.co/abc123/image.jpg
+            </p>
+        </div>
+
+        <!-- STEP 2: Result के ऊपर Banner -->
+        <div class="code-box">
+            <h3>📍 LOCATION 1: Result Table के ऊपर Banner Image</h3>
+            
+            <p style="color: #ffd700;">यह बड़ा banner result table के ऊपर दिखेगा।</p>
+            
+            <div class="step-box">
+                <h4>index.html में कहां Add करें:</h4>
+                <p style="color: #ffd700;">Line 56-59 के बीच में:</p>
+                
+                <pre>&lt;div id="todayResultSection"&gt;
+    &lt;h3 class="section-title"&gt;KOLKATA FF FATAFAT RESULT TODAY&lt;/h3&gt;
+    
+    <span style="color: #0f0;">&lt;!-- ADD IMAGE HERE --&gt;
+    &lt;div style="text-align: center; margin: 20px 0;"&gt;
+        &lt;img src="https://i.ibb.co/YOUR-IMAGE-URL.jpg" 
+             alt="Kolkata FF Banner" 
+             style="max-width: 100%; border-radius: 10px; border: 2px solid #ffd700;"&gt;
+    &lt;/div&gt;</span>
+    
+    &lt;div id="todayTable"&gt;&lt;/div&gt;</pre>
+            </div>
+
+            <div class="step-box">
+                <h4>📝 अपना URL यहां Replace करें:</h4>
+                <pre style="color: #ff0;">&lt;img src="<span style="color: #0f0;">PASTE-YOUR-IMAGE-URL-HERE</span>" 
+     alt="Banner" 
+     style="max-width: 100%; border-radius: 10px;"&gt;</pre>
+            </div>
+        </div>
+
+        <!-- STEP 3: Logo Image -->
+        <div class="code-box">
+            <h3>📍 LOCATION 2: Header में Logo Image</h3>
+            
+            <p style="color: #ffd700;">Website के top पर logo के रूप में।</p>
+            
+            <div class="step-box">
+                <h4>index.html में Line 34-36:</h4>
+                
+                <pre>&lt;div class="logo"&gt;
+    <span style="color: #0f0;">&lt;img src="https://i.ibb.co/YOUR-LOGO.png" 
+         alt="Logo" 
+         style="height: 60px; margin-bottom: 10px;"&gt;</span>
+    &lt;h1&gt;mallkolkata.in&lt;/h1&gt;
+    &lt;p class="tagline"&gt;❤️ Result Sabse Pahle ❤️&lt;/p&gt;
+&lt;/div&gt;</pre>
+            </div>
+        </div>
+
+        <!-- STEP 4: Mall/News Posts में -->
+        <div class="code-box">
+            <h3>📍 LOCATION 3: Mall/News Posts में Image</h3>
+            
+            <p style="color: #ffd700;">Admin panel से post बनाते समय।</p>
+            
+            <div class="step-box">
+                <h4>admin-posts.html में Content में:</h4>
+                
+                <pre>&lt;div style="text-align: center;"&gt;
+    <span style="color: #0f0;">&lt;img src="https://i.ibb.co/YOUR-POST-IMAGE.jpg" 
+         alt="Mall Sale" 
+         style="max-width: 100%; border-radius: 10px; margin: 20px 0;"&gt;</span>
+&lt;/div&gt;
+
+&lt;h3&gt;South City Mall - Diwali Sale&lt;/h3&gt;
+&lt;p&gt;Up to 70% OFF on all items!&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Fashion: 50% OFF&lt;/li&gt;
+    &lt;li&gt;Electronics: 40% OFF&lt;/li&gt;
+&lt;/ul&gt;</pre>
+            </div>
+        </div>
+
+        <!-- STEP 5: Complete Example -->
+        <div class="code-box">
+            <h3>🎯 COMPLETE EXAMPLE - Copy & Paste Ready!</h3>
+            
+            <p style="color: #ffd700;">यह code index.html में line 56-59 के बीच paste करें:</p>
+            
+            <pre>&lt;!-- Banner Image Above Result Table --&gt;
+&lt;div style="text-align: center; margin: 20px 0; padding: 10px; background: linear-gradient(135deg, #000 0%, #1a1a1a 100%); border-radius: 15px; border: 2px solid #ffd700;"&gt;
+    &lt;img src="<span style="color: #f00;">YOUR-IMAGE-URL-HERE</span>" 
+         alt="Kolkata FF Today Result" 
+         style="max-width: 100%; border-radius: 10px; box-shadow: 0 5px 20px rgba(255,215,0,0.3);"&gt;
+    &lt;p style="color: #ffd700; margin-top: 10px; font-weight: bold;"&gt;
+        📢 आज का रिजल्ट - Live Updates
+    &lt;/p&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- STEP 6: Upload Services -->
+        <div class="code-box">
+            <h3>🌐 FREE Image Upload Services</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+                <div class="step-box">
+                    <h4>ImgBB ⭐</h4>
+                    <p style="color: #ffd700;">• No signup required<br>• Direct links<br>• Fast & reliable</p>
+                    <a href="https://imgbb.com" target="_blank" class="btn-upload">Open ImgBB</a>
+                </div>
+                
+                <div class="step-box">
+                    <h4>Imgur</h4>
+                    <p style="color: #ffd700;">• Popular service<br>• Easy to use<br>• Free forever</p>
+                    <a href="https://imgur.com" target="_blank" class="btn-upload">Open Imgur</a>
+                </div>
+                
+                <div class="step-box">
+                    <h4>Cloudinary</h4>
+                    <p style="color: #ffd700;">• Professional<br>• Image optimization<br>• Free tier</p>
+                    <a href="https://cloudinary.com" target="_blank" class="btn-upload">Open Cloudinary</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Size Recommendations -->
+        <div class="code-box">
+            <h3>📏 Recommended Image Sizes</h3>
+            
+            <div class="step-box">
+                <ul style="color: #ffd700; line-height: 2;">
+                    <li><strong>Banner (Result के ऊपर):</strong> 1200x300 px या 1920x400 px</li>
+                    <li><strong>Logo:</strong> 200x200 px या 300x300 px (square)</li>
+                    <li><strong>Post Images:</strong> 800x600 px या 1200x800 px</li>
+                    <li><strong>Format:</strong> JPG (photos), PNG (logos/graphics)</li>
+                    <li><strong>Max Size:</strong> 2MB से कम (fast loading के लिए)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Quick Steps -->
+        <div class="alert alert-warning" style="margin: 30px 0;">
+            <h3 style="color: #ffd700; margin-top: 0;">⚡ Quick Steps Summary:</h3>
+            <ol style="color: #ffd700; line-height: 2;">
+                <li>📤 Upload image to ImgBB/Imgur</li>
+                <li>📋 Copy direct image URL</li>
+                <li>📝 Paste URL in <code>&lt;img src="URL"&gt;</code></li>
+                <li>💾 Save index.html</li>
+                <li>📤 Upload to S3/Cloudflare</li>
+                <li>✅ Done! Image दिखेगी website पर!</li>
+            </ol>
+        </div>
+
+        <!-- Example Preview -->
+        <div class="code-box">
+            <h3>👀 Preview Example</h3>
+            <p style="color: #ffd700;">ऐसा दिखेगा आपका image:</p>
+            
+            <div style="text-align: center; margin: 20px 0; padding: 10px; background: linear-gradient(135deg, #000 0%, #1a1a1a 100%); border-radius: 15px; border: 2px solid #ffd700;">
+                <div style="background: #1a1a1a; padding: 40px; border-radius: 10px; border: 2px dashed #ffd700;">
+                    <p style="color: #ffd700; font-size: 24px; margin: 0;">🖼️ YOUR IMAGE HERE</p>
+                    <p style="color: #999; margin: 10px 0 0 0;">Banner / Logo / Post Image</p>
+                </div>
+                <p style="color: #ffd700; margin-top: 10px; font-weight: bold;">
+                    📢 आज का रिजल्ट - Live Updates
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mall Kolkata • Powered by mallkolkata.in</p>
+        </div>
+    </footer>
+
+    <script>
+        console.log('🖼️ Image Add Guide Loaded');
+        console.log('📝 Follow steps to add images to your website');
+    </script>
+</body>
+</html>
+

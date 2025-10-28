@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts Manager - Mall Kolkata Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        .admin-container {
+            background: #1a1a1a;
+            border: 2px solid #ffd700;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        
+        .post-form {
+            background: #0a0a0a;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #ffd700;
+            margin-bottom: 30px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .posts-list {
+            margin-top: 30px;
+        }
+        
+        .post-item {
+            background: #000;
+            border: 1px solid #ffd700;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .post-actions button {
+            margin-left: 10px;
+            padding: 5px 15px;
+            font-size: 12px;
+        }
+        
+        textarea {
+            min-height: 150px;
+            font-family: inherit;
+        }
+        
+        .success-msg {
+            background: #0a0a0a;
+            border: 2px solid #ffd700;
+            color: #ffd700;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>mallkolkata.in</h1>
+                <p class="tagline">❤️ Admin Panel ❤️</p>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">🏠 Home</a></li>
+                    <li><a href="admin-posts.html" class="active">📝 Posts Manager</a></li>
+                    <li><a href="settings.html">⚙️ Settings</a></li>
+                    <li><a href="news.html">📰 News</a></li>
+                    <li><a href="mall.html">🛍️ Mall Info</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="admin-container">
+            <h2 style="color: #ffd700; text-align: center; margin-bottom: 30px;">📝 Posts Management System</h2>
+            
+            <div class="success-msg" id="successMsg"></div>
+            
+            <!-- Add New Post Form -->
+            <div class="post-form">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">Add New Post</h3>
+                
+                <form id="addPostForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Category *</label>
+                            <select id="postCategory" class="form-control" required>
+                                <option value="news">📰 News</option>
+                                <option value="mall">🛍️ Mall Info</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Author Name</label>
+                            <input type="text" id="postAuthor" class="form-control" value="Admin">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Post Title *</label>
+                        <input type="text" id="postTitle" class="form-control" placeholder="Enter post title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>URL Slug (Optional - Auto-generated from title)</label>
+                        <input type="text" id="postSlug" class="form-control" placeholder="my-post-url-slug">
+                        <small style="color: #ffd700; opacity: 0.7; font-size: 12px;">Leave empty for auto-generation. Example: my-awesome-post</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Featured Image URL (Optional)</label>
+                        <input type="url" id="postImage" class="form-control" placeholder="https://example.com/image.jpg">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Excerpt / Short Description *</label>
+                        <textarea id="postExcerpt" class="form-control" placeholder="Short description (150-200 characters)" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Full Content * (HTML supported)</label>
+                        <textarea id="postContent" class="form-control" placeholder="Full post content. You can use HTML tags like <p>, <h4>, <ul>, <li>, <strong>, etc." required></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Meta Description (SEO)</label>
+                            <input type="text" id="postMetaDesc" class="form-control" placeholder="SEO description (150-160 characters)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Keywords (SEO)</label>
+                            <input type="text" id="postKeywords" class="form-control" placeholder="keyword1, keyword2, keyword3">
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <button type="submit" class="btn btn-success">✅ Add Post</button>
+                        <button type="button" onclick="document.getElementById('addPostForm').reset()" class="btn btn-secondary">🔄 Clear Form</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Category Filter -->
+            <div style="margin-bottom: 20px; display: flex; gap: 10px; align-items: center;">
+                <label style="color: #ffd700; font-weight: bold;">Filter:</label>
+                <button onclick="filterPosts('all')" class="btn btn-primary">All Posts</button>
+                <button onclick="filterPosts('news')" class="btn btn-primary">📰 News</button>
+                <button onclick="filterPosts('mall')" class="btn btn-primary">🛍️ Mall</button>
+                <button onclick="exportAllPosts()" class="btn btn-success" style="margin-left: auto;">📥 Export All Posts</button>
+            </div>
+            
+            <!-- Posts List -->
+            <div class="posts-list">
+                <h3 style="color: #ffd700; margin-bottom: 20px;">📚 All Posts (<span id="postsCount">0</span>)</h3>
+                <div id="postsListContainer"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="text-align: center; color: #ffd700;">&copy; 2025 Mall Kolkata Admin Panel</p>
+        </div>
+    </footer>
+
+    <script src="posts-manager.js"></script>
+    <script>
+        let currentFilter = 'all';
+        
+        // Add New Post
+        document.getElementById('addPostForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const postData = {
+                title: document.getElementById('postTitle').value,
+                slug: document.getElementById('postSlug').value,
+                content: document.getElementById('postContent').value,
+                excerpt: document.getElementById('postExcerpt').value,
+                image: document.getElementById('postImage').value,
+                author: document.getElementById('postAuthor').value || 'Admin',
+                metaDescription: document.getElementById('postMetaDesc').value,
+                keywords: document.getElementById('postKeywords').value
+            };
+            
+            const category = document.getElementById('postCategory').value;
+            
+            const newPost = addNewPost(category, postData);
+            
+            // Show success message
+            const successMsg = document.getElementById('successMsg');
+            successMsg.style.display = 'block';
+            successMsg.innerHTML = `
+                <strong>✅ Post Added Successfully!</strong><br>
+                <strong>Title:</strong> ${newPost.title}<br>
+                <strong>Permalink:</strong> <code>${newPost.permalink}</code><br>
+                <button onclick="downloadPostHTML('${newPost.id}')" class="btn btn-success" style="margin-top: 10px;">📥 Download HTML File</button>
+            `;
+            
+            // Reset form
+            this.reset();
+            
+            // Refresh posts list
+            displayPostsList();
+            
+            // Scroll to success message
+            successMsg.scrollIntoView({ behavior: 'smooth' });
+            
+            // Hide message after 10 seconds
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 10000);
+        });
+        
+        // Display Posts List
+        function displayPostsList() {
+            const posts = currentFilter === 'all' ? getAllPosts() : getAllPosts(currentFilter);
+            const container = document.getElementById('postsListContainer');
+            const countSpan = document.getElementById('postsCount');
+            
+            countSpan.textContent = posts.length;
+            
+            if (posts.length === 0) {
+                container.innerHTML = '<p style="text-align: center; padding: 30px; color: #ffd700; opacity: 0.7;">No posts found. Add your first post above!</p>';
+                return;
+            }
+            
+            let html = '';
+            posts.forEach(post => {
+                html += `
+                    <div class="post-item">
+                        <div style="flex: 1;">
+                            <h4 style="color: #ffd700; margin-bottom: 5px;">
+                                ${post.category === 'news' ? '📰' : '🛍️'} ${post.title}
+                            </h4>
+                            <p style="color: #ffd700; opacity: 0.7; font-size: 12px; margin-bottom: 5px;">
+                                📅 ${post.dateFormatted} | 👤 ${post.author}
+                            </p>
+                            <p style="color: #ffd700; opacity: 0.8; font-size: 13px; margin-bottom: 5px;">
+                                🔗 Permalink: <code style="background: #0a0a0a; padding: 2px 8px; border-radius: 3px;">${post.permalink}</code>
+                            </p>
+                        </div>
+                        <div class="post-actions">
+                            <button onclick="downloadPostHTML('${post.id}')" class="btn btn-success" title="Download HTML">📥 Download</button>
+                            <button onclick="viewPost('${post.id}')" class="btn btn-primary" title="Preview">👁️ Preview</button>
+                            <button onclick="deletePostConfirm('${post.id}')" class="btn btn-danger" title="Delete">🗑️ Delete</button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        // Filter Posts
+        function filterPosts(filter) {
+            currentFilter = filter;
+            displayPostsList();
+        }
+        
+        // View Post Preview
+        function viewPost(postId) {
+            const post = getPostById(postId);
+            if (!post) return;
+            
+            const html = exportPostAsHTML(post);
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            window.open(url, '_blank');
+            
+            setTimeout(() => URL.revokeObjectURL(url), 100);
+        }
+        
+        // Delete Post
+        function deletePostConfirm(postId) {
+            const post = getPostById(postId);
+            if (!post) return;
+            
+            if (confirm(`Are you sure you want to delete:\n\n"${post.title}"\n\nThis action cannot be undone!`)) {
+                deletePost(postId);
+                displayPostsList();
+                alert('✅ Post deleted successfully!');
+            }
+        }
+        
+        // Auto-generate slug from title
+        document.getElementById('postTitle').addEventListener('input', function() {
+            const slugInput = document.getElementById('postSlug');
+            if (!slugInput.value) {
+                const slug = this.value
+                    .toLowerCase()
+                    .replace(/[^a-z0-9\s-]/g, '')
+                    .replace(/\s+/g, '-')
+                    .replace(/-+/g, '-');
+                slugInput.value = slug;
+            }
+        });
+        
+        // Initial load
+        displayPostsList();
+    </script>
+</body>
+</html>
+

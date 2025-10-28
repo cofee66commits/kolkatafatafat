@@ -1,0 +1,204 @@
+==========================================
+KOLKATA FF - QUICK START GUIDE
+==========================================
+
+🚀 GET STARTED IN 5 MINUTES!
+==========================================
+
+STEP 1: UPLOAD FILES ⬆️
+-----------------------
+Upload ALL 12 files to your server:
+→ Via cPanel File Manager
+→ Or FTP (FileZilla)
+→ Or Alibaba Cloud OSS
+
+Files go in: public_html or www folder
+
+
+STEP 2: ACCESS WEBSITE ⚠️
+-------------------------
+Public Website: https://yourdomain.com
+
+Admin Panel (SECRET!): 
+https://yourdomain.com/uyetr-36ejdne-ye.html
+
+⚠️ NEVER share admin URL publicly!
+
+
+STEP 3: LOGIN TO ADMIN 🔐
+-------------------------
+Password (copy this):
+m7(__.tbo}'al(V%nkBPr'8h5}wvo1f4,%1v~1}1m&MJz~wzz)
+
+2FA Code: 123456
+
+
+STEP 4: SETUP 2FA (Optional) 📱
+-------------------------------
+1. Download Google Authenticator app
+2. Click "Setup 2FA" in admin
+3. Scan QR code
+4. SAVE 10 backup codes!
+
+
+STEP 5: ADD RESULTS 📊
+----------------------
+1. Round 1: Enter 3 digits (e.g., 239)
+2. Sum auto-shows (e.g., 4)
+3. Click "Save"
+4. Repeat for all 8 rounds
+5. Check homepage!
+
+
+==========================================
+✅ DONE! YOUR WEBSITE IS LIVE!
+==========================================
+
+
+🎯 IMPORTANT FEATURES
+==========================================
+
+AUTO TABLE SYSTEM
+-----------------
+→ New table at 12 AM IST every day
+→ Old results auto-archived
+→ 8 rounds per day
+→ Real-time updates
+
+
+SECURITY
+--------
+→ 5 wrong passwords = 24-hour block
+→ 2FA with Google Authenticator
+→ 10 backup codes
+→ Hidden admin URL
+→ Session expires in 2 hours
+
+
+SEO OPTIMIZED
+-------------
+Keywords: kolkata ff, kolkata fatafat, 
+kolkata ff result, ff result, tips
+
+
+==========================================
+⚡ QUICK LINKS
+==========================================
+
+PUBLIC PAGES:
+→ Home: /index.html
+→ News: /news.html
+→ Mall Info: /mall.html
+→ About: /about.html
+→ Contact: /contact.html
+→ Privacy: /privacy.html
+
+ADMIN PANEL (SECRET):
+→ /uyetr-36ejdne-ye.html ⚠️
+
+
+==========================================
+🔧 CUSTOMIZATION
+==========================================
+
+MUST DO BEFORE LIVE:
+--------------------
+✓ Rename admin URL file
+✓ Change admin password
+✓ Setup your 2FA
+✓ Save backup codes
+✓ Install SSL (HTTPS)
+
+
+OPTIONAL:
+---------
+○ Add Google AdSense
+○ Add Google Analytics
+○ Change website name
+○ Update contact email
+
+
+==========================================
+❓ COMMON QUESTIONS
+==========================================
+
+Q: How to add results?
+A: Login → Enter digits → Auto-sum → Save
+
+Q: Results not showing?
+A: Enable JavaScript & localStorage
+
+Q: Can't login?
+A: Use password exactly (copy-paste)
+   Use 123456 for 2FA demo
+
+Q: IP blocked?
+A: Wait 24 hours or use different device
+
+Q: Where is data stored?
+A: Browser's localStorage (client-side)
+
+Q: Will tables auto-create?
+A: Yes! Every day at 12 AM IST
+
+Q: How to backup data?
+A: Press F12 → Console → localStorage
+
+Q: Mobile friendly?
+A: Yes! Works on all devices
+
+
+==========================================
+⚠️ SECURITY WARNINGS
+==========================================
+
+❌ NEVER share admin URL publicly
+❌ NEVER commit password to Git
+❌ NEVER disable 2FA
+❌ NEVER use HTTP (use HTTPS)
+❌ NEVER share backup codes
+
+✅ ALWAYS use strong password
+✅ ALWAYS rename admin file
+✅ ALWAYS enable SSL
+✅ ALWAYS save backup codes
+✅ ALWAYS logout after use
+
+
+==========================================
+📞 NEED HELP?
+==========================================
+
+Email: nbpshelterinfo@gmail.com
+
+For help with:
+→ Installation issues
+→ Login problems
+→ Feature questions
+→ Bug reports
+
+
+==========================================
+🎊 YOU'RE ALL SET!
+==========================================
+
+Your Kolkata FF website is ready to go!
+
+Website Features:
+✓ Auto table generation
+✓ 8 rounds per day
+✓ Old results archive
+✓ Admin panel
+✓ IP blocking
+✓ 2FA security
+✓ AdSense ready
+✓ Analytics ready
+✓ SEO optimized
+✓ Mobile responsive
+
+Upload → Login → Add Results → Done!
+
+Good luck with your website! 🚀
+
+==========================================
+

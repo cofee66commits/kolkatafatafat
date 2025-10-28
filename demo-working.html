@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolkata FF - Working Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>mallkolkata.in</h1>
+            <p class="tagline">❤️ Result Sabse Pahle ❤️</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">🏠 Home</a></li>
+                    <li><a href="news.html">📰 News</a></li>
+                    <li><a href="mall.html">🏬 Mall</a></li>
+                    <li><a href="about.html">ℹ️ About</a></li>
+                    <li><a href="contact.html">📞 Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="welcome-banner">
+            <span class="original-tag">⭐ ORIGINAL</span>
+            <h2>Kolkata FF Results</h2>
+            <p>❤️ This is Working Demo - Results Will Show ❤️</p>
+        </div>
+
+        <section class="results-section">
+            <h2 class="section-title">📊 Today's Result - 28 October 2025</h2>
+            <div id="todayTable"></div>
+        </section>
+
+        <div class="adsense-container">
+            <div class="adsense-slot">
+                <p>📢 AdSense Advertisement</p>
+            </div>
+        </div>
+
+        <section class="results-section">
+            <h2 class="section-title">📅 Old Results</h2>
+            <div id="oldResults"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-nav">
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="contact.html">Contact Us</a> | 
+                <a href="about.html">About Us</a>
+            </div>
+            <p>&copy; 2018 - 2025 Mall Kolkata • Powered by mallkolkata.in</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">
+                📧 Email: <a href="mailto:nbpshelterinfo@gmail.com" style="color: #ffd700;">nbpshelterinfo@gmail.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // THIS DEMO HAS DATA EMBEDDED - NO FILE FETCH NEEDED!
+        // WORKS LOCALLY WITH file:// PROTOCOL
+        
+        console.log('🚀 Demo Started');
+        
+        // Sample data embedded in code (no fetch needed)
+        const demoData = {
+            '2025-10-28': {
+                rounds: [
+                    { digits: '239', sum: '4' },
+                    { digits: '378', sum: '8' },
+                    { digits: '358', sum: '6' },
+                    { digits: '990', sum: '8' },
+                    { digits: '112', sum: '4' },
+                    { digits: '123', sum: '6' },
+                    { digits: '366', sum: '5' },
+                    { digits: '388', sum: '9' }
+                ]
+            },
+            '2025-10-27': {
+                rounds: [
+                    { digits: '134', sum: '8' },
+                    { digits: '389', sum: '0' },
+                    { digits: '360', sum: '9' },
+                    { digits: '499', sum: '2' },
+                    { digits: '111', sum: '3' },
+                    { digits: '222', sum: '6' },
+                    { digits: '333', sum: '9' },
+                    { digits: '444', sum: '2' }
+                ]
+            },
+            '2025-10-26': {
+                rounds: [
+                    { digits: '567', sum: '8' },
+                    { digits: '234', sum: '9' },
+                    { digits: '890', sum: '7' },
+                    { digits: '123', sum: '6' },
+                    { digits: '456', sum: '5' },
+                    { digits: '789', sum: '4' },
+                    { digits: '012', sum: '3' },
+                    { digits: '345', sum: '2' }
+                ]
+            }
+        };
+        
+        // Save to localStorage
+        localStorage.setItem('kolkataFFResults', JSON.stringify(demoData));
+        console.log('✅ Demo data loaded into localStorage');
+        
+        // Format date function
+        function formatDate(dateStr) {
+            const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                           'July', 'August', 'September', 'October', 'November', 'December'];
+            const [year, month, day] = dateStr.split('-');
+            return `${parseInt(day)} ${months[parseInt(month) - 1]} ${year}`;
+        }
+        
+        // Generate today's table
+        function generateTodayTable() {
+            const results = demoData['2025-10-28'];
+            
+            let html = '<div class="result-table-wrapper">';
+            html += '<table class="result-table">';
+            html += '<thead><tr>';
+            html += '<th colspan="8" class="date-header-cell">28 October 2025</th>';
+            html += '</tr></thead>';
+            html += '<thead><tr>';
+            for (let i = 1; i <= 8; i++) {
+                html += `<th>${i}</th>`;
+            }
+            html += '</tr></thead>';
+            html += '<tbody>';
+            
+            // First row - digits
+            html += '<tr>';
+            for (let i = 0; i < 8; i++) {
+                html += `<td>${results.rounds[i].digits}</td>`;
+            }
+            html += '</tr>';
+            
+            // Second row - sum
+            html += '<tr>';
+            for (let i = 0; i < 8; i++) {
+                html += `<td>${results.rounds[i].sum}</td>`;
+            }
+            html += '</tr>';
+            
+            html += '</tbody></table></div>';
+            
+            document.getElementById('todayTable').innerHTML = html;
+            console.log('✅ Today table generated');
+        }
+        
+        // Generate old results
+        function generateOldResults() {
+            const dates = ['2025-10-27', '2025-10-26'];
+            let html = '';
+            
+            dates.forEach(dateKey => {
+                const results = demoData[dateKey];
+                
+                html += '<div class="result-table-wrapper" style="margin-bottom: 20px;">';
+                html += '<table class="result-table old-result">';
+                html += '<thead><tr>';
+                html += '<th colspan="8" class="date-header-cell">' + formatDate(dateKey) + '</th>';
+                html += '</tr></thead>';
+                html += '<thead><tr>';
+                for (let i = 1; i <= 8; i++) {
+                    html += `<th>${i}</th>`;
+                }
+                html += '</tr></thead>';
+                html += '<tbody>';
+                
+                // First row - digits
+                html += '<tr>';
+                for (let i = 0; i < 8; i++) {
+                    html += `<td>${results.rounds[i].digits}</td>`;
+                }
+                html += '</tr>';
+                
+                // Second row - sum
+                html += '<tr>';
+                for (let i = 0; i < 8; i++) {
+                    html += `<td>${results.rounds[i].sum}</td>`;
+                }
+                html += '</tr>';
+                
+                html += '</tbody></table></div>';
+            });
+            
+            document.getElementById('oldResults').innerHTML = html;
+            console.log('✅ Old results generated');
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎯 Initializing demo...');
+            generateTodayTable();
+            generateOldResults();
+            console.log('✅ Demo initialized successfully!');
+            console.log('📊 Check above - results should be visible!');
+        });
+    </script>
+</body>
+</html>
+

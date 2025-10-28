@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - News Portal</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>📰 News Portal</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="content-section">
+            <h2>Contact Us</h2>
+            
+            <div class="info-box">
+                <p>We value your feedback and are here to help! Please use the contact form below to leave us a message. We will be happy to get back to you as soon as possible.</p>
+                
+                <h3>📧 Contact Information</h3>
+                <p><strong>Email:</strong> <a href="mailto:nbpshelterinfo@gmail.com" style="color: #667eea;">nbpshelterinfo@gmail.com</a></p>
+                
+                <div style="margin-top: 30px; padding: 20px; background: #fff3cd; border-radius: 8px; border-left: 4px solid #ffc107;">
+                    <h4>⏰ Response Time</h4>
+                    <p style="margin-bottom: 0;">We typically respond to all inquiries within 24-48 hours during business days. For urgent matters, please mention "URGENT" in your subject line.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Information Only -->
+        <div class="content-section">
+            <h3>How to Reach Us</h3>
+            <div class="info-box">
+                <p style="text-align: center; padding: 30px; background: #e8eaf6; border-radius: 8px; margin: 20px 0;">
+                    <strong style="font-size: 18px; color: #1e3c72;">📧 Email Us Directly</strong><br><br>
+                    <span style="font-size: 20px; color: #667eea; font-weight: bold;">nbpshelterinfo@gmail.com</span><br><br>
+                    <small style="color: #666;">We typically respond within 24-48 hours</small>
+                </p>
+                
+                <div style="padding: 20px; background: #fff3cd; border-radius: 8px; border-left: 4px solid #ffc107; margin-top: 20px;">
+                    <h4 style="color: #856404; margin-bottom: 10px;">📝 When Contacting Us</h4>
+                    <p style="margin-bottom: 10px;">Please include the following information in your email:</p>
+                    <ul style="margin-left: 20px; line-height: 2; color: #666;">
+                        <li>Your name</li>
+                        <li>Subject of your inquiry</li>
+                        <li>Detailed message</li>
+                        <li>Any relevant screenshots (if applicable)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Contact Info -->
+        <div class="content-section">
+            <h3>Other Ways to Reach Us</h3>
+            <div class="info-box">
+                <h4>Business Inquiries</h4>
+                <p>For business partnerships, advertising opportunities, or media inquiries, please email us at: <strong>nbpshelterinfo@gmail.com</strong></p>
+                
+                <h4>Technical Support</h4>
+                <p>If you're experiencing technical issues with our website, please describe the problem in detail when contacting us, including:</p>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li>Your browser and version</li>
+                    <li>Device type (desktop, mobile, tablet)</li>
+                    <li>Steps to reproduce the issue</li>
+                    <li>Screenshots if possible</li>
+                </ul>
+                
+                <h4>Feedback & Suggestions</h4>
+                <p>We love hearing from our users! If you have suggestions for improving our service or content you'd like to see, please let us know.</p>
+            </div>
+        </div>
+
+        <!-- AdSense Placeholder -->
+        <div class="adsense-container">
+            <div id="adsenseSlot1" class="adsense-slot">
+                <!-- Ad Space -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <nav class="footer-nav">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </nav>
+            <p>&copy; 2018 - 2025 News Portal • All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Load AdSense and Analytics
+        document.addEventListener('DOMContentLoaded', function() {
+            const adsenseCode = localStorage.getItem('adsenseCode');
+            if (adsenseCode) {
+                const slots = document.querySelectorAll('.adsense-slot');
+                slots.forEach(slot => {
+                    slot.innerHTML = adsenseCode;
+                });
+            }
+            
+            const analyticsId = localStorage.getItem('analyticsId');
+            if (analyticsId) {
+                const scripts = document.querySelectorAll('script');
+                scripts.forEach(script => {
+                    if (script.innerHTML.includes('gtag')) {
+                        script.innerHTML = script.innerHTML.replace(/GA_MEASUREMENT_ID/g, analyticsId);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+

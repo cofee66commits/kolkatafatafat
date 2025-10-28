@@ -1,0 +1,476 @@
+==========================================
+KOLKATA FF WEBSITE - INSTALLATION GUIDE
+==========================================
+
+📦 COMPLETE FILE LIST
+==========================================
+
+Make sure you have ALL these files:
+
+✓ index.html              (Homepage with auto tables)
+✓ uyetr-36ejdne-ye.html  (Hidden admin panel) ⚠️ IMPORTANT
+✓ news.html               (News category page)
+✓ mall.html               (Mall info page)
+✓ about.html              (About us page)
+✓ contact.html            (Contact page)
+✓ privacy.html            (Privacy policy)
+✓ style.css               (All styling)
+✓ main.js                 (Auto table system)
+✓ admin.js                (Admin panel with security)
+✓ README.md               (Documentation)
+✓ .htaccess               (Server config - optional)
+
+
+==========================================
+⚡ QUICK START (3 STEPS)
+==========================================
+
+STEP 1: UPLOAD ALL FILES
+------------------------
+Upload ALL files to your web server
+→ Use FTP, cPanel, or cloud storage
+→ Place in public_html or www folder
+→ Keep all files in same directory
+
+
+STEP 2: ACCESS ADMIN PANEL
+--------------------------
+⚠️ KEEP THIS URL SECRET! ⚠️
+
+URL: https://yourdomain.com/uyetr-36ejdne-ye.html
+
+Password: m7(__.tbo}'al(V%nkBPr'8h5}wvo1f4,%1v~1}1m&MJz~wzz)
+2FA Code: 123456 (for demo)
+
+
+STEP 3: ADD RESULTS
+-------------------
+1. Login to admin panel
+2. Enter 3 digits for Round 1 (e.g., 239)
+3. Sum auto-calculates (e.g., 4)
+4. Click "Save"
+5. Repeat for all 8 rounds
+6. Results show on homepage instantly!
+
+
+==========================================
+🔐 SECURITY FEATURES
+==========================================
+
+✅ IP BLOCKING SYSTEM
+--------------------
+- 5 wrong password attempts = 24-hour block
+- Block applies to browser fingerprint
+- Cannot bypass by clearing cookies
+- Automatic unblock after 24 hours
+
+✅ TWO-FACTOR AUTHENTICATION
+---------------------------
+- Google Authenticator required
+- 10 backup codes provided
+- Each backup code works once
+- Setup instructions in admin panel
+
+✅ HIDDEN ADMIN URL
+------------------
+- Admin page NOT linked from website
+- URL not visible in website code
+- Only you know the admin URL
+- Can rename file for extra security
+
+
+==========================================
+📅 AUTOMATIC TABLE SYSTEM
+==========================================
+
+HOW IT WORKS:
+-------------
+
+12:00 AM IST (Midnight)
+→ New blank table created automatically
+→ Previous day moves to "Old Results"
+
+During the Day
+→ Admin adds results for 8 rounds
+→ Homepage updates in real-time
+→ Visitors see latest results
+
+After 24 Hours
+→ Table becomes "old result"
+→ Stored permanently
+→ New table appears at top
+
+
+KOLKATA FF TIMINGS:
+------------------
+Round 1: 10:12 AM 🕙
+Round 2: 11:43 AM 🕚
+Round 3: 01:14 PM 🕜
+Round 4: 02:45 PM 🕝
+Round 5: 04:16 PM 🕞
+Round 6: 05:47 PM 🕟
+Round 7: 07:18 PM 🕢
+Round 8: 08:49 PM 🕣
+
+Sunday: Only 4 rounds (till 3:00 PM)
+
+
+==========================================
+📤 UPLOAD METHODS
+==========================================
+
+METHOD A: cPanel File Manager
+-----------------------------
+1. Login to cPanel
+2. Click "File Manager"
+3. Go to public_html folder
+4. Click "Upload"
+5. Select ALL files
+6. Upload and wait
+7. Done! Visit your domain
+
+
+METHOD B: FTP (FileZilla)
+-------------------------
+1. Download FileZilla (free)
+2. Connect to your server:
+   Host: ftp.yourdomain.com
+   Username: your-ftp-username
+   Password: your-ftp-password
+   Port: 21
+3. Navigate to public_html on right side
+4. Drag ALL files from left to right
+5. Wait for upload to complete
+6. Done!
+
+
+METHOD C: Alibaba Cloud OSS
+---------------------------
+1. Login to Alibaba Cloud
+2. Go to Object Storage Service
+3. Create new bucket
+4. Upload all files
+5. Enable "Static Website Hosting"
+6. Set index.html as default page
+7. Access via OSS domain
+
+
+METHOD D: GitHub Pages (Free)
+-----------------------------
+1. Create GitHub account
+2. Create new repository
+3. Upload all files
+4. Go to Settings → Pages
+5. Select main branch
+6. Save
+7. Access via username.github.io/repo
+
+
+==========================================
+🎨 CUSTOMIZATION
+==========================================
+
+CHANGE WEBSITE NAME
+------------------
+1. Open all HTML files
+2. Find: KOLKATAFF.in
+3. Replace with: YourName.com
+4. Save and re-upload
+
+
+CHANGE ADMIN URL (Recommended!)
+-------------------------------
+1. Rename: uyetr-36ejdne-ye.html
+2. To: my-secret-admin-xyz.html
+3. Upload renamed file
+4. Access new URL
+5. Keep URL secret!
+
+
+CHANGE PASSWORD
+--------------
+1. Open admin.js in text editor
+2. Find line 3: const ADMIN_PASSWORD
+3. Change to your password
+4. Save and upload
+
+
+ADD GOOGLE ADSENSE
+------------------
+1. Get AdSense approval
+2. Login to admin panel
+3. Click "Edit AdSense Code"
+4. Paste complete ad code
+5. Save
+6. Ads appear on all pages
+
+
+ADD GOOGLE ANALYTICS
+--------------------
+1. Create Analytics property
+2. Get Measurement ID (G-XXXXXXXXXX)
+3. Login to admin panel
+4. Click "Edit Analytics ID"
+5. Enter ID and save
+6. Refresh page
+
+
+==========================================
+🔧 TROUBLESHOOTING
+==========================================
+
+PROBLEM: Can't access website
+------------------------------
+SOLUTION:
+✓ Check files in correct folder (public_html)
+✓ Check domain DNS settings
+✓ Wait 24-48 hours for propagation
+✓ Try http:// instead of https://
+
+
+PROBLEM: Admin login not working
+---------------------------------
+SOLUTION:
+✓ Check password (copy-paste to avoid typos)
+✓ Use 123456 as 2FA code for demo
+✓ Check if IP is blocked (wait 24 hours)
+✓ Try different browser
+✓ Clear browser cache
+
+
+PROBLEM: 5 failed attempts - BLOCKED
+------------------------------------
+SOLUTION:
+✓ Wait 24 hours for auto-unblock
+✓ Or use different device/network
+✓ Or clear localStorage (loses data):
+  - Press F12
+  - Go to Application tab
+  - Click "Clear storage"
+  - Reload page
+
+
+PROBLEM: Results not saving
+---------------------------
+SOLUTION:
+✓ Enable JavaScript in browser
+✓ Enable localStorage in browser
+✓ Clear browser data
+✓ Try different browser
+✓ Check browser console for errors
+
+
+PROBLEM: New day not creating
+-----------------------------
+SOLUTION:
+✓ System runs on IST timezone
+✓ Checks every minute automatically
+✓ Wait until 12:01 AM IST
+✓ Or manually trigger in console:
+  createNewDay()
+
+
+PROBLEM: Mobile view broken
+---------------------------
+SOLUTION:
+✓ Clear mobile browser cache
+✓ Check style.css uploaded correctly
+✓ Reload page (pull down to refresh)
+
+
+==========================================
+⚠️ BEFORE GOING LIVE - CHECKLIST
+==========================================
+
+□ All files uploaded
+□ Website accessible via domain
+□ Admin panel accessible
+□ Tested admin login
+□ Changed admin password
+□ Renamed admin URL file
+□ Setup Google Authenticator
+□ Saved 10 backup codes
+□ Tested adding result
+□ Results showing on homepage
+□ Mobile view checked
+□ SSL certificate installed (HTTPS)
+□ Google Analytics added
+□ AdSense code added
+□ Updated contact email
+□ Updated about page
+□ Privacy policy reviewed
+
+
+==========================================
+🔒 SECURITY BEST PRACTICES
+==========================================
+
+1. ADMIN URL
+   ✓ Never share admin URL publicly
+   ✓ Rename admin file to random name
+   ✓ Bookmark URL privately
+   ✓ Don't link from website
+
+2. PASSWORD
+   ✓ Use very strong password
+   ✓ Don't write password in public place
+   ✓ Change default password
+   ✓ Never share password
+
+3. 2FA SETUP
+   ✓ Install Google Authenticator app
+   ✓ Scan QR code or enter secret key
+   ✓ Save 10 backup codes
+   ✓ Store codes in password manager
+
+4. BACKUPS
+   ✓ Backup website files regularly
+   ✓ Export localStorage data:
+     - Press F12
+     - Console tab
+     - Type: localStorage
+     - Copy data
+   ✓ Keep backup of result data
+
+5. HTTPS
+   ✓ Install SSL certificate
+   ✓ Force HTTPS in .htaccess
+   ✓ Use secure connection always
+
+
+==========================================
+📊 ADMIN PANEL FEATURES
+==========================================
+
+RESULT ENTRY
+-----------
+→ 8 rounds per day
+→ Auto-calculate sum
+→ Save each round
+→ View on homepage instantly
+
+SETTINGS
+--------
+→ Edit AdSense code
+→ Edit Analytics ID
+→ View old results
+→ Logout
+
+SECURITY
+--------
+→ Password protection
+→ 2FA required
+→ IP blocking
+→ Backup codes
+→ Session timeout (2 hours)
+
+
+==========================================
+📱 MOBILE ACCESS
+==========================================
+
+ADMIN ON MOBILE
+--------------
+1. Open admin URL on phone
+2. Login with password
+3. Enter 2FA code from app
+4. Add results
+5. Works perfectly on mobile!
+
+GOOGLE AUTHENTICATOR
+--------------------
+1. Download app from:
+   - iOS: App Store
+   - Android: Play Store
+2. Add account
+3. Scan QR code
+4. Use 6-digit code to login
+
+
+==========================================
+💾 DATA STORAGE
+==========================================
+
+WHERE DATA IS STORED:
+--------------------
+→ Browser's localStorage
+→ Client-side only (no server)
+→ Stored per domain
+→ Persists after page refresh
+→ Cleared if browser cache cleared
+
+WHAT IS STORED:
+--------------
+→ All result data (all dates)
+→ Admin session (2 hours)
+→ Login attempts
+→ IP blocks
+→ AdSense code
+→ Analytics ID
+→ Backup codes
+
+BACKUP YOUR DATA:
+----------------
+→ Export regularly
+→ Save to file
+→ Keep offline backup
+
+
+==========================================
+🌐 BROWSER COMPATIBILITY
+==========================================
+
+✅ Google Chrome (recommended)
+✅ Mozilla Firefox
+✅ Microsoft Edge
+✅ Safari (Mac/iOS)
+✅ Opera
+✅ Samsung Internet
+✅ Mobile browsers
+
+
+==========================================
+📞 SUPPORT & HELP
+==========================================
+
+EMAIL: nbpshelterinfo@gmail.com
+
+Include in email:
+→ Your domain name
+→ Browser and device
+→ Screenshot of error
+→ Steps to reproduce
+→ What you've tried already
+
+
+==========================================
+🎯 QUICK REFERENCE
+==========================================
+
+Admin URL: /uyetr-36ejdne-ye.html
+Password: m7(__.tbo}'al(V%nkBPr'8h5}wvo1f4,%1v~1}1m&MJz~wzz)
+2FA Demo: 123456
+2FA Secret: JBSWY3DPEHPK3PXP
+Timezone: IST (India)
+Rounds: 8 per day (4 on Sunday)
+New day: 12:00 AM IST
+Session: 2 hours
+IP Block: 24 hours
+
+
+==========================================
+✅ SUCCESS!
+==========================================
+
+Your Kolkata FF website is ready! 🎉
+
+Next Steps:
+1. Test all features
+2. Add today's results
+3. Setup AdSense
+4. Setup Analytics
+5. Promote your website
+
+Good luck! 🚀
+
+==========================================

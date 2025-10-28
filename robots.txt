@@ -1,0 +1,41 @@
+# Robots.txt for Kolkata FF Website
+# Block admin pages from search engines
+
+User-agent: *
+
+# Allow public pages
+Allow: /
+Allow: /index.html
+Allow: /news.html
+Allow: /mall.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /privacy.html
+Allow: /style.css
+Allow: /main.js
+
+# Block all admin and sensitive files
+Disallow: /*admin*
+Disallow: /*login*
+Disallow: /*dashboard*
+Disallow: /*panel*
+Disallow: /uyetr-36ejdne-ye.html
+Disallow: /admin.js
+Disallow: /*.txt$
+
+# Block search engines from specific paths
+User-agent: Googlebot
+Disallow: /*admin*
+Disallow: /uyetr-36ejdne-ye.html
+
+User-agent: Bingbot
+Disallow: /*admin*
+Disallow: /uyetr-36ejdne-ye.html
+
+User-agent: Slurp
+Disallow: /*admin*
+Disallow: /uyetr-36ejdne-ye.html
+
+# Sitemap (optional - create later)
+# Sitemap: https://yourdomain.com/sitemap.xml
+

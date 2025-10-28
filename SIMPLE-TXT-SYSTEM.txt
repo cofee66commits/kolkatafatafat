@@ -1,0 +1,182 @@
+═══════════════════════════════════════════════════════════════════
+   ✅ SIMPLIFIED TXT FILE SYSTEM - NO FOLDER NEEDED!
+   Upload txt files directly to root directory
+═══════════════════════════════════════════════════════════════════
+
+🎯 HOW IT WORKS (SUPER SIMPLE!)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Create txt file with today's date: 2025-10-28.txt
+2. Add results (8 lines)
+3. Upload to ROOT directory (same as index.html)
+4. Website auto-fetches and displays!
+
+NO SEPARATE FOLDER NEEDED! ✅
+
+
+📁 FILE STRUCTURE (SIMPLE!)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+yourdomain.com/
+├── index.html
+├── main.js
+├── style.css
+├── 2025-10-28.txt  ← Today's result (ROOT!)
+├── 2025-10-27.txt  ← Yesterday
+├── 2025-10-26.txt  ← Day before
+└── ... (more dates)
+
+NO results/ FOLDER NEEDED!
+
+
+📝 TXT FILE FORMAT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+File name: 2025-10-28.txt
+
+Content:
+1. 239, 4
+2. 378, 8
+3. 358, 6
+4. 990, 8
+5. 112, 4
+6. 123, 6
+7. 366, 5
+8. 388, 9
+
+
+🚀 DAILY WORKFLOW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: Create file with today's date
+──────────────────────────────────────
+File name: 2025-10-28.txt
+(Format: YYYY-MM-DD.txt)
+
+STEP 2: Add results
+───────────────────
+1. 239, 4
+2. 378, 8
+... (8 lines)
+
+STEP 3: Upload to root directory
+─────────────────────────────────
+Upload to: yourdomain.com/2025-10-28.txt
+(Same location as index.html)
+
+STEP 4: Done!
+─────────────
+Website checks for today's date file
+Auto-displays in 5 minutes!
+
+
+☁️ UPLOAD TO S3/CLOUDFLARE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+AWS S3:
+aws s3 cp 2025-10-28.txt s3://your-bucket/ --acl public-read
+
+Cloudflare Pages:
+git add 2025-10-28.txt
+git commit -m "Add today results"
+git push
+
+Or via Dashboard:
+Upload file to root directory
+
+
+⏰ AUTOMATIC BEHAVIOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Website looks for: 2025-10-28.txt (today's date)
+✅ If found: Displays as "Today's Result"
+✅ If not found: Uses localStorage backup
+✅ Updates every 5 minutes
+✅ No folders needed!
+
+
+✅ ADVANTAGES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ No separate folder - Upload to root!
+✅ Simpler structure - Less confusion
+✅ Same as other files - Easy management
+✅ Works with S3/Cloudflare - No path issues
+✅ Auto-fetch built into main.js - One file!
+✅ Fallback to localStorage - Reliable
+
+
+🔧 WHAT CHANGED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OLD SYSTEM:
+❌ results/ folder needed
+❌ Separate results-fetcher.js file
+❌ Complex path: results/2025-10-28.txt
+
+NEW SYSTEM:
+✅ No folder - root directory only!
+✅ Integrated into main.js
+✅ Simple path: 2025-10-28.txt
+
+
+📊 EXAMPLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Your S3 bucket / Cloudflare root:
+https://yourdomain.com/
+├── index.html
+├── 2025-10-28.txt  ← Today (auto-loaded)
+├── 2025-10-27.txt  ← Yesterday
+└── 2025-10-26.txt  ← Older
+
+Website checks: yourdomain.com/2025-10-28.txt
+If found: Shows results
+If not: Shows old data from localStorage
+
+
+💡 UPDATE DURING DAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+You can update same file multiple times:
+
+10:12 AM - Upload with Round 1
+11:43 AM - Re-upload with Rounds 1-2
+... (website auto-refreshes every 5 min)
+
+
+✅ CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+□ Create: 2025-10-28.txt (today's date)
+□ Add: 8 lines of results
+□ Upload to: ROOT directory (not in folder!)
+□ Set: Public read (if S3)
+□ Wait: 5 minutes
+□ Check: Website shows results!
+□ ✅ Working!
+
+
+🔍 TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Problem: Not showing results
+Solution: 
+1. Check file name: Must be YYYY-MM-DD.txt
+2. Check location: Must be in ROOT (not folder)
+3. Check permissions: Must be public-readable
+4. Open console (F12): Check for errors
+5. Check format: Must have 8 lines
+
+
+📞 SUPPORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Email: nbpshelterinfo@gmail.com
+
+
+═══════════════════════════════════════════════════════════════════
+   ✅ NOW WORKING - NO FOLDER NEEDED!
+   JUST UPLOAD TXT FILE TO ROOT DIRECTORY!
+═══════════════════════════════════════════════════════════════════
+

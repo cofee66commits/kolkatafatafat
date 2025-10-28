@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Settings - Mall Kolkata</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        .settings-container {
+            background: #1a1a1a;
+            border: 2px solid #ffd700;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+        
+        .settings-section {
+            background: #0a0a0a;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #ffd700;
+            margin-bottom: 25px;
+        }
+        
+        .settings-section h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-box-helper {
+            background: #1a1a1a;
+            border: 1px solid #ffd700;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            color: #ffd700;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .success-notification {
+            background: #0a0a0a;
+            border: 2px solid #ffd700;
+            color: #ffd700;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .current-status {
+            background: #000;
+            border: 1px solid #ffd700;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .status-badge {
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .status-active {
+            background: #ffd700;
+            color: #000;
+        }
+        
+        .status-inactive {
+            background: #666;
+            color: #fff;
+        }
+        
+        .code-preview {
+            background: #000;
+            border: 1px solid #ffd700;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 150px;
+            overflow-y: auto;
+            margin-top: 10px;
+            color: #ffd700;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .help-link {
+            color: #ffd700;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        .help-link:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>mallkolkata.in</h1>
+                <p class="tagline">❤️ Settings Panel ❤️</p>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">🏠 Home</a></li>
+                    <li><a href="admin-posts.html">📝 Posts</a></li>
+                    <li><a href="settings.html" class="active">⚙️ Settings</a></li>
+                    <li><a href="news.html">📰 News</a></li>
+                    <li><a href="mall.html">🛍️ Mall</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="settings-container">
+            <h2 style="color: #ffd700; text-align: center; margin-bottom: 30px;">⚙️ Website Settings & Configuration</h2>
+            
+            <div class="success-notification" id="successNotification"></div>
+            
+            <!-- Google AdSense Section -->
+            <div class="settings-section">
+                <h3>
+                    <span style="font-size: 24px;">📊</span>
+                    Google AdSense Configuration
+                </h3>
+                
+                <div class="current-status">
+                    <span style="color: #ffd700; font-weight: bold;">Status:</span>
+                    <span class="status-badge" id="adsenseStatus">Inactive</span>
+                    <span style="color: #ffd700; opacity: 0.8; margin-left: auto; font-size: 12px;" id="adsenseDate"></span>
+                </div>
+                
+                <div class="info-box-helper">
+                    <strong>ℹ️ How to get AdSense Code:</strong><br>
+                    1. Login to <a href="https://www.google.com/adsense/" target="_blank" class="help-link">Google AdSense</a><br>
+                    2. Go to "Ads" → "By ad unit" → Create new ad unit<br>
+                    3. Copy the ad code (entire &lt;script&gt; tag)<br>
+                    4. Paste below and save
+                </div>
+                
+                <form id="adsenseForm">
+                    <div class="form-group">
+                        <label>AdSense Ad Code (Full HTML code with &lt;script&gt; tags):</label>
+                        <textarea id="adsenseCode" class="form-control" rows="8" placeholder="Paste your complete AdSense code here...
+Example:
+<script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX'
+     crossorigin='anonymous'></script>
+<ins class='adsbygoogle'
+     style='display:block'
+     data-ad-client='ca-pub-XXXXXXXXXXXXXXXX'
+     data-ad-slot='XXXXXXXXXX'
+     data-ad-format='auto'
+     data-full-width-responsive='true'></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>"></textarea>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-success">💾 Save AdSense Code</button>
+                        <button type="button" onclick="previewAdsense()" class="btn btn-primary">👁️ Preview Code</button>
+                        <button type="button" onclick="clearAdsense()" class="btn btn-danger">🗑️ Remove Code</button>
+                    </div>
+                </form>
+                
+                <div id="adsensePreview" style="display: none;">
+                    <p style="color: #ffd700; margin-top: 15px; font-weight: bold;">Code Preview:</p>
+                    <div class="code-preview" id="adsenseCodePreview"></div>
+                </div>
+            </div>
+            
+            <!-- Google Analytics Section -->
+            <div class="settings-section">
+                <h3>
+                    <span style="font-size: 24px;">📈</span>
+                    Google Analytics Configuration
+                </h3>
+                
+                <div class="current-status">
+                    <span style="color: #ffd700; font-weight: bold;">Status:</span>
+                    <span class="status-badge" id="analyticsStatus">Inactive</span>
+                    <span style="color: #ffd700; opacity: 0.8; margin-left: auto; font-size: 12px;" id="analyticsDate"></span>
+                </div>
+                
+                <div class="info-box-helper">
+                    <strong>ℹ️ How to get Analytics Measurement ID:</strong><br>
+                    1. Login to <a href="https://analytics.google.com/" target="_blank" class="help-link">Google Analytics</a><br>
+                    2. Go to Admin → Property → Data Streams<br>
+                    3. Select your web stream<br>
+                    4. Copy "Measurement ID" (starts with G-XXXXXXXXXX)<br>
+                    5. Paste below and save
+                </div>
+                
+                <form id="analyticsForm">
+                    <div class="form-group">
+                        <label>Google Analytics Measurement ID:</label>
+                        <input type="text" id="analyticsId" class="form-control" placeholder="G-XXXXXXXXXX or UA-XXXXXXXXX-X">
+                        <small style="color: #ffd700; opacity: 0.7; font-size: 12px; display: block; margin-top: 5px;">
+                            Example: G-1A2B3C4D5E or UA-123456789-1
+                        </small>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-success">💾 Save Analytics ID</button>
+                        <button type="button" onclick="testAnalytics()" class="btn btn-primary">🧪 Test Connection</button>
+                        <button type="button" onclick="clearAnalytics()" class="btn btn-danger">🗑️ Remove ID</button>
+                    </div>
+                </form>
+                
+                <div id="analyticsInfo" style="display: none; margin-top: 15px;">
+                    <p style="color: #ffd700; font-weight: bold;">Current Analytics ID:</p>
+                    <div class="code-preview" id="analyticsIdPreview"></div>
+                </div>
+            </div>
+            
+            <!-- Kolkata FF Results Settings -->
+            <div class="settings-section">
+                <h3>
+                    <span style="font-size: 24px;">🎲</span>
+                    Kolkata FF Results Management
+                </h3>
+                
+                <div class="info-box-helper">
+                    <strong>ℹ️ About Kolkata FF Results:</strong><br>
+                    Results are stored in browser localStorage. They persist across sessions but are device-specific.
+                </div>
+                
+                <div class="button-group">
+                    <button onclick="viewResultsData()" class="btn btn-primary">📊 View Results Data</button>
+                    <button onclick="exportResults()" class="btn btn-success">📥 Export Results</button>
+                    <button onclick="importResults()" class="btn btn-secondary">📤 Import Results</button>
+                    <button onclick="clearResults()" class="btn btn-danger">🗑️ Clear All Results</button>
+                </div>
+                
+                <div id="resultsDataView" style="display: none; margin-top: 15px;">
+                    <p style="color: #ffd700; font-weight: bold;">Results Data:</p>
+                    <div class="code-preview" id="resultsDataPreview"></div>
+                </div>
+            </div>
+            
+            <!-- Blog Posts Settings -->
+            <div class="settings-section">
+                <h3>
+                    <span style="font-size: 24px;">📝</span>
+                    Blog Posts Data Management
+                </h3>
+                
+                <div class="current-status">
+                    <span style="color: #ffd700; font-weight: bold;">Total Posts:</span>
+                    <span class="status-badge status-active" id="totalPosts">0</span>
+                    <span style="color: #ffd700; margin-left: 20px;">News:</span>
+                    <span class="status-badge status-active" id="newsPosts">0</span>
+                    <span style="color: #ffd700; margin-left: 10px;">Mall:</span>
+                    <span class="status-badge status-active" id="mallPosts">0</span>
+                </div>
+                
+                <div class="info-box-helper">
+                    <strong>ℹ️ About Blog Posts:</strong><br>
+                    All posts are stored in browser localStorage. Backup regularly to avoid data loss!
+                </div>
+                
+                <div class="button-group">
+                    <button onclick="window.location.href='admin-posts.html'" class="btn btn-primary">➕ Add New Post</button>
+                    <button onclick="exportPosts()" class="btn btn-success">📥 Backup Posts Data</button>
+                    <button onclick="importPosts()" class="btn btn-secondary">📤 Restore Posts Data</button>
+                </div>
+            </div>
+            
+            <!-- System Information -->
+            <div class="settings-section">
+                <h3>
+                    <span style="font-size: 24px;">ℹ️</span>
+                    System Information
+                </h3>
+                
+                <div style="color: #ffd700; line-height: 2;">
+                    <p><strong>Website:</strong> mallkolkata.in</p>
+                    <p><strong>System Version:</strong> 1.0.0</p>
+                    <p><strong>Storage Type:</strong> Browser localStorage</p>
+                    <p><strong>Admin Panel:</strong> Password-Free Access</p>
+                    <p><strong>Last Updated:</strong> <span id="lastUpdated"></span></p>
+                </div>
+                
+                <div class="button-group" style="margin-top: 20px;">
+                    <button onclick="checkSystem()" class="btn btn-primary">🔍 Check System Status</button>
+                    <button onclick="clearAllData()" class="btn btn-danger">⚠️ Clear All Website Data</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="text-align: center; color: #ffd700;">&copy; 2025 Mall Kolkata • Settings Panel</p>
+        </div>
+    </footer>
+
+    <script src="posts-manager.js"></script>
+    <script>
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCurrentSettings();
+            updatePostsCount();
+            updateLastUpdated();
+        });
+        
+        // Load current settings
+        function loadCurrentSettings() {
+            // Load AdSense
+            const adsenseCode = localStorage.getItem('adsenseCode');
+            if (adsenseCode) {
+                document.getElementById('adsenseCode').value = adsenseCode;
+                document.getElementById('adsenseStatus').textContent = 'Active';
+                document.getElementById('adsenseStatus').className = 'status-badge status-active';
+                const date = localStorage.getItem('adsenseDate');
+                if (date) {
+                    document.getElementById('adsenseDate').textContent = 'Updated: ' + new Date(date).toLocaleDateString();
+                }
+            }
+            
+            // Load Analytics
+            const analyticsId = localStorage.getItem('analyticsId');
+            if (analyticsId) {
+                document.getElementById('analyticsId').value = analyticsId;
+                document.getElementById('analyticsStatus').textContent = 'Active';
+                document.getElementById('analyticsStatus').className = 'status-badge status-active';
+                const date = localStorage.getItem('analyticsDate');
+                if (date) {
+                    document.getElementById('analyticsDate').textContent = 'Updated: ' + new Date(date).toLocaleDateString();
+                }
+            }
+        }
+        
+        // Update posts count
+        function updatePostsCount() {
+            const posts = getAllPosts();
+            const newsPosts = getAllPosts('news');
+            const mallPosts = getAllPosts('mall');
+            
+            document.getElementById('totalPosts').textContent = posts.length;
+            document.getElementById('newsPosts').textContent = newsPosts.length;
+            document.getElementById('mallPosts').textContent = mallPosts.length;
+        }
+        
+        // Update last updated time
+        function updateLastUpdated() {
+            document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
+        }
+        
+        // Show success notification
+        function showSuccess(message) {
+            const notification = document.getElementById('successNotification');
+            notification.innerHTML = '<strong>✅ Success!</strong><br>' + message;
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 5000);
+            notification.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        // AdSense Form Submit
+        document.getElementById('adsenseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const code = document.getElementById('adsenseCode').value.trim();
+            
+            if (!code) {
+                alert('⚠️ Please enter AdSense code!');
+                return;
+            }
+            
+            localStorage.setItem('adsenseCode', code);
+            localStorage.setItem('adsenseDate', new Date().toISOString());
+            
+            showSuccess('AdSense code saved successfully! It will now appear on all pages.');
+            loadCurrentSettings();
+        });
+        
+        // Analytics Form Submit
+        document.getElementById('analyticsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const id = document.getElementById('analyticsId').value.trim();
+            
+            if (!id) {
+                alert('⚠️ Please enter Analytics Measurement ID!');
+                return;
+            }
+            
+            if (!id.match(/^(G-|UA-)/)) {
+                alert('⚠️ Invalid format! ID should start with "G-" or "UA-"');
+                return;
+            }
+            
+            localStorage.setItem('analyticsId', id);
+            localStorage.setItem('analyticsDate', new Date().toISOString());
+            
+            showSuccess('Google Analytics ID saved successfully! Tracking is now active.');
+            loadCurrentSettings();
+        });
+        
+        // Preview AdSense
+        function previewAdsense() {
+            const code = document.getElementById('adsenseCode').value.trim() || localStorage.getItem('adsenseCode');
+            if (code) {
+                document.getElementById('adsenseCodePreview').textContent = code;
+                document.getElementById('adsensePreview').style.display = 'block';
+            } else {
+                alert('No AdSense code to preview!');
+            }
+        }
+        
+        // Test Analytics
+        function testAnalytics() {
+            const id = document.getElementById('analyticsId').value.trim() || localStorage.getItem('analyticsId');
+            if (id) {
+                document.getElementById('analyticsIdPreview').textContent = id;
+                document.getElementById('analyticsInfo').style.display = 'block';
+                alert('✅ Analytics ID is valid: ' + id);
+            } else {
+                alert('⚠️ No Analytics ID configured!');
+            }
+        }
+        
+        // Clear AdSense
+        function clearAdsense() {
+            if (confirm('Are you sure you want to remove AdSense code?')) {
+                localStorage.removeItem('adsenseCode');
+                localStorage.removeItem('adsenseDate');
+                document.getElementById('adsenseCode').value = '';
+                loadCurrentSettings();
+                showSuccess('AdSense code removed successfully!');
+            }
+        }
+        
+        // Clear Analytics
+        function clearAnalytics() {
+            if (confirm('Are you sure you want to remove Analytics ID?')) {
+                localStorage.removeItem('analyticsId');
+                localStorage.removeItem('analyticsDate');
+                document.getElementById('analyticsId').value = '';
+                loadCurrentSettings();
+                showSuccess('Google Analytics ID removed successfully!');
+            }
+        }
+        
+        // View Results Data
+        function viewResultsData() {
+            const data = localStorage.getItem('kolkataFFResults');
+            if (data) {
+                document.getElementById('resultsDataPreview').textContent = data;
+                document.getElementById('resultsDataView').style.display = 'block';
+            } else {
+                alert('No results data found!');
+            }
+        }
+        
+        // Export Results
+        function exportResults() {
+            const data = localStorage.getItem('kolkataFFResults');
+            if (data) {
+                const blob = new Blob([data], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'kolkata-ff-results-backup-' + new Date().toISOString().split('T')[0] + '.json';
+                a.click();
+                URL.revokeObjectURL(url);
+                showSuccess('Results data exported successfully!');
+            } else {
+                alert('No results data to export!');
+            }
+        }
+        
+        // Import Results
+        function importResults() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    try {
+                        const data = JSON.parse(event.target.result);
+                        localStorage.setItem('kolkataFFResults', JSON.stringify(data));
+                        showSuccess('Results data imported successfully!');
+                    } catch (error) {
+                        alert('❌ Invalid file format!');
+                    }
+                };
+                reader.readAsText(file);
+            };
+            input.click();
+        }
+        
+        // Clear Results
+        function clearResults() {
+            if (confirm('⚠️ Are you sure? This will delete ALL Kolkata FF results data!')) {
+                if (confirm('⚠️⚠️ FINAL WARNING: This action cannot be undone!')) {
+                    localStorage.removeItem('kolkataFFResults');
+                    localStorage.removeItem('lastCheckedDate');
+                    showSuccess('All results data cleared!');
+                }
+            }
+        }
+        
+        // Export Posts
+        function exportPosts() {
+            const data = localStorage.getItem('blogPosts');
+            if (data) {
+                const blob = new Blob([data], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'blog-posts-backup-' + new Date().toISOString().split('T')[0] + '.json';
+                a.click();
+                URL.revokeObjectURL(url);
+                showSuccess('Blog posts data backed up successfully!');
+            } else {
+                alert('No posts data to backup!');
+            }
+        }
+        
+        // Import Posts
+        function importPosts() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    try {
+                        const data = JSON.parse(event.target.result);
+                        localStorage.setItem('blogPosts', JSON.stringify(data));
+                        updatePostsCount();
+                        showSuccess('Blog posts data restored successfully!');
+                    } catch (error) {
+                        alert('❌ Invalid backup file!');
+                    }
+                };
+                reader.readAsText(file);
+            };
+            input.click();
+        }
+        
+        // Check System
+        function checkSystem() {
+            const info = {
+                adsense: !!localStorage.getItem('adsenseCode'),
+                analytics: !!localStorage.getItem('analyticsId'),
+                results: !!localStorage.getItem('kolkataFFResults'),
+                posts: !!localStorage.getItem('blogPosts'),
+                storageUsed: new Blob([JSON.stringify(localStorage)]).size
+            };
+            
+            let message = '🔍 System Status:\n\n';
+            message += '📊 AdSense: ' + (info.adsense ? '✅ Active' : '❌ Not configured') + '\n';
+            message += '📈 Analytics: ' + (info.analytics ? '✅ Active' : '❌ Not configured') + '\n';
+            message += '🎲 FF Results: ' + (info.results ? '✅ Present' : '❌ No data') + '\n';
+            message += '📝 Blog Posts: ' + (info.posts ? '✅ Present' : '❌ No posts') + '\n';
+            message += '💾 Storage Used: ' + (info.storageUsed / 1024).toFixed(2) + ' KB';
+            
+            alert(message);
+        }
+        
+        // Clear All Data
+        function clearAllData() {
+            if (confirm('⚠️⚠️⚠️ DANGER! This will delete ALL website data including:\n\n- AdSense code\n- Analytics ID\n- Kolkata FF results\n- Blog posts\n- All settings\n\nAre you ABSOLUTELY sure?')) {
+                if (confirm('⚠️ FINAL WARNING: Type "DELETE" in the next prompt to confirm')) {
+                    const confirmation = prompt('Type DELETE to confirm:');
+                    if (confirmation === 'DELETE') {
+                        localStorage.clear();
+                        alert('✅ All data cleared! Reloading page...');
+                        location.reload();
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+

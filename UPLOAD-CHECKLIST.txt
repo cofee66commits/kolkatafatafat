@@ -1,0 +1,189 @@
+═══════════════════════════════════════════════════════════════════
+   📤 UPLOAD CHECKLIST - FOR S3 / CLOUDFLARE
+═══════════════════════════════════════════════════════════════════
+
+जब आप अपनी website को S3 या Cloudflare पर upload करें:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 REQUIRED FILES (ROOT DIRECTORY में upload करें)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ MAIN WEBSITE FILES:
+□ index.html
+□ news.html
+□ mall.html
+□ about.html
+□ contact.html
+□ privacy.html
+□ style.css
+□ main.js
+□ posts-manager.js
+□ robots.txt
+
+✅ ADMIN/SETTINGS PAGES:
+□ admin-posts.html
+□ settings.html
+
+✅ TODAY'S RESULT FILE:
+□ 2025-10-28.txt (या आज की date)
+
+⚠️ IMPORTANT: सभी files ROOT में upload करें!
+   results/ folder की जरूरत नहीं है!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📁 FILE STRUCTURE (S3/CLOUDFLARE पर)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+your-bucket/
+├── index.html
+├── news.html
+├── mall.html
+├── about.html
+├── contact.html
+├── privacy.html
+├── style.css
+├── main.js
+├── posts-manager.js
+├── admin-posts.html
+├── settings.html
+├── 2025-10-28.txt    ← आज की results
+├── 2025-10-29.txt    ← कल की results (बाद में)
+└── robots.txt
+
+⚠️ NO "results/" FOLDER NEEDED!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 AWS S3 SETUP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: Create Bucket
+1. AWS Console → S3
+2. Create bucket: "mallkolkata"
+3. Region: ap-south-1 (Mumbai)
+4. Uncheck "Block all public access"
+5. Create bucket
+
+STEP 2: Enable Static Website
+1. Bucket → Properties
+2. Static website hosting → Enable
+3. Index document: index.html
+4. Save changes
+
+STEP 3: Set Bucket Policy
+1. Bucket → Permissions
+2. Bucket policy → Edit
+3. Paste this:
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::mallkolkata/*"
+    }
+  ]
+}
+
+4. Save changes
+
+STEP 4: Upload Files
+1. Bucket → Upload
+2. Add files (सभी HTML, CSS, JS files)
+3. Permissions → Grant public-read
+4. Upload
+
+STEP 5: Test
+1. Copy bucket website URL:
+   http://mallkolkata.s3-website.ap-south-1.amazonaws.com
+2. Open in browser
+3. Check console (F12)
+4. Should show: "✅ Found txt file: 2025-10-28.txt"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌐 CLOUDFLARE PAGES SETUP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: Sign Up
+1. Go to: pages.cloudflare.com
+2. Sign up (free)
+
+STEP 2: Upload Files
+1. Create a project
+2. Upload all files as ZIP or drag-drop
+3. Deploy
+
+STEP 3: Test
+1. Open your URL: https://mallkolkata.pages.dev
+2. Check console (F12)
+3. Should work!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 DAILY WORKFLOW (Result Update)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Every day, create new txt file:
+
+1. Create file: 2025-10-29.txt
+2. Add results:
+   1. 239, 4
+   2. 378, 8
+   3. 358, 6
+   4. 990, 8
+   5. 112, 4
+   6. 123, 6
+   7. 366, 5
+   8. 388, 9
+
+3. Upload to S3 (ROOT directory):
+   aws s3 cp 2025-10-29.txt s3://mallkolkata/ --acl public-read
+
+4. ✅ Website automatically shows new results!
+5. Old results automatically move to "Old Results" section!
+
+⚠️ IMPORTANT: File name must be exact date: YYYY-MM-DD.txt
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🧪 TESTING AFTER UPLOAD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Open website URL
+2. Press F12 → Console tab
+3. Look for:
+   ✅ "🔍 Looking for: 2025-10-28.txt"
+   ✅ "✅ Found txt file: 2025-10-28.txt"
+   ✅ "✅ Results loaded from txt file!"
+   ✅ "📊 Displaying results from txt file"
+
+4. Check table - should show numbers, not "–"
+
+If showing "–":
+→ Check console for errors
+→ Verify file is public (try opening URL/2025-10-28.txt)
+→ Check file name format (must be YYYY-MM-DD.txt)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💰 COST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+AWS S3: ~₹5-20/month (very low traffic)
+Cloudflare Pages: FREE (unlimited)
+
+Cloudflare Pages recommended for FREE hosting! 🎉
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📞 SUPPORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+After uploading, if still not working:
+1. Check console (F12)
+2. Screenshot the errors
+3. Email: nbpshelterinfo@gmail.com
+
+═══════════════════════════════════════════════════════════════════
+   ✅ UPLOAD करने के बाद automatically काम करेगा!
+   Local testing के लिए demo-working.html use करें!
+═══════════════════════════════════════════════════════════════════
+
